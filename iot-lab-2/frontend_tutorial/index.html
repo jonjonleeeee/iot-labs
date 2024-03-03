@@ -2,16 +2,93 @@
 
 <script src="index.js"></script>
 
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        .container {
+            display: inline-block;
+            position: relative;
+        }
+
+        .joystick-btn {
+            background-color: #13294B; /* Green background */
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 30px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 50%; /* Rounded corners */
+            box-shadow: 0 9px #5e5e5e; /* Shadow effect */
+            width: 100px; /* Fixed width */
+            height: 90px; /* Fixed height */
+        }
+
+        .joystick-btn:hover { background-color: #E84A27 }
+
+        .joystick-btn:active {
+            background-color: #E84A27;
+            box-shadow: 0 5px #666;
+            transform: translateY(4px);
+        }
+
+        .top-btn {
+            position: absolute;
+            top: 10px;
+            left: 0;
+            /* transform: trasnlateX(-50%); */
+        }
+
+        .left-btn {
+            position: absolute;
+            top: 110px;
+            right: 0;
+        }
+
+        .right-btn {
+            position: absolute;
+            top: 110px;
+            left: 105px;
+        }
+
+        .bottom-btn {
+            position: absolute;
+            top: 110px;
+            left: 0;
+            /* transform: translateX(-50%); */
+        }
+    </style>
+</head>
+
 <body>
 <h1>My First Website</h1>
 <p>Hello IoT!</p>
 
-My name is: <input id="myName" type="text" placeholder="name"/>
-<button class="btn btn-success" onclick="greeting()">Sumbit</button>
-<br>
+Total speed: <input id="speed" type="text" placeholder="speed"/>
 <span id="greet"> </span>
 <br>
 <span id="greet_from_server"> </span>
 </body>
+<br>
+<br>
+<br>
+<br>
+<div class="container">
+    <button class="joystick-btn top-btn" onclick="client_forward()">⬆</button>
+
+    <button class="joystick-btn left-btn" onclick="client_left()">⬅</button>
+    
+    <button class="joystick-btn right-btn" onclick="client_right()">➡</button>
+    
+    <button class="joystick-btn bottom-btn" onclick="client_backward()">⬇</button>
+</div>
+
 
 </html>
